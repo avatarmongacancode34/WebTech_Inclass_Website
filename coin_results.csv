@@ -1,5 +1,0 @@
-target,dp_answer,dp_states,dp_checks,dp_seconds,naive_answer,naive_calls,naive_seconds,greedy_answer
-6,2,6,18,0.000004,2,24,0.000006,3
-12,3,12,36,0.000007,3,441,0.000087,3
-18,5,18,54,0.000009,5,7920,0.001628,6
-24,6,24,72,0.000011,BUDGET_EXCEEDED,50000,NA,6
