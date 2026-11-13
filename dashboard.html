@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Ashesi</title>
+  <meta name="description" content="Your Ashesi student dashboard: courses, schedule, deadlines and announcements.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="dash">
+
+    <!-- Hidden checkbox powers the mobile sidebar (no JavaScript needed) -->
+    <input type="checkbox" id="sidebar-toggle" class="dash__toggle-input" aria-label="Toggle navigation menu">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dash__sidebar" aria-label="Main navigation">
+      <a href="index.html" class="dash__brand">
+        <span class="navbar__mark">A</span> Ashesi
+      </a>
+
+      <nav>
+        <div class="sidebar-nav__group">
+          <p class="sidebar-nav__label">Menu</p>
+          <a href="dashboard.html" class="sidebar-nav__link is-active" aria-current="page">
+            <span class="sidebar-nav__icon">🏠</span> Dashboard
+          </a>
+          <a href="#courses" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">📚</span> My Courses
+          </a>
+          <a href="#schedule" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">🗓️</span> Schedule
+          </a>
+          <a href="#deadlines" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">📝</span> Assignments
+          </a>
+          <a href="#grades" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">🎓</span> Grades
+          </a>
+        </div>
+
+        <div class="sidebar-nav__group">
+          <p class="sidebar-nav__label">Explore</p>
+          <a href="index.html" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">🌐</span> Home
+          </a>
+          <a href="about.html" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">ℹ️</span> About
+          </a>
+          <a href="contact.html" class="sidebar-nav__link">
+            <span class="sidebar-nav__icon">✉️</span> Contact
+          </a>
+        </div>
+      </nav>
+
+      <div class="dash__sidebar-footer">
+        <a href="login.html" class="btn btn--outline btn--block" style="color:#fff;border-color:rgba(255,255,255,.4);">Log out</a>
+      </div>
+    </aside>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="dash__main">
+
+      <!-- Top bar -->
+      <header class="dash__topbar">
+        <label for="sidebar-toggle" class="dash__menu-btn" aria-label="Open menu">☰</label>
+
+        <form class="dash__search" role="search" onsubmit="return false;">
+          <label for="dash-search" class="sr-only">Search</label>
+          <input id="dash-search" type="search" class="form-input" placeholder="Search courses, assignments…">
+        </form>
+
+        <div class="dash__user">
+          <div class="dash__user-text text-right">
+            <div class="dash__user-name">Ama Mensah</div>
+            <div class="dash__user-role">Computer Science · Year 2</div>
+          </div>
+          <span class="avatar" aria-hidden="true">AM</span>
+        </div>
+      </header>
+
+      <main class="dash__content">
+
+        <!-- Welcome banner -->
+        <section class="welcome">
+          <div>
+            <h1>Good morning, Ama 👋</h1>
+            <p>You have 3 classes today and 2 assignments due this week.</p>
+          </div>
+          <a href="#deadlines" class="btn btn--accent">View deadlines</a>
+        </section>
+
+        <!-- Stat cards -->
+        <section class="grid grid--4" aria-label="Key figures">
+          <article class="card stat-card">
+            <div class="stat-card__icon">🎓</div>
+            <div>
+              <div class="stat-card__value">3.72</div>
+              <div class="stat-card__label">Current GPA</div>
+            </div>
+          </article>
+          <article class="card stat-card">
+            <div class="stat-card__icon stat-card__icon--accent">📚</div>
+            <div>
+              <div class="stat-card__value">5</div>
+              <div class="stat-card__label">Courses this semester</div>
+            </div>
+          </article>
+          <article class="card stat-card">
+            <div class="stat-card__icon stat-card__icon--success">✅</div>
+            <div>
+              <div class="stat-card__value">94%</div>
+              <div class="stat-card__label">Attendance</div>
+            </div>
+          </article>
+          <article class="card stat-card">
+            <div class="stat-card__icon stat-card__icon--info">📝</div>
+            <div>
+              <div class="stat-card__value">2</div>
+              <div class="stat-card__label">Assignments due</div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Two-column area -->
+        <div class="dash__layout">
+
+          <!-- LEFT COLUMN -->
+          <div class="dash__col">
+
+            <section class="card" id="courses">
+              <div class="card__header">
+                <h2 class="card__title">My Courses</h2>
+                <a href="#" class="btn btn--ghost btn--sm">See all</a>
+              </div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Course</th>
+                      <th scope="col">Lecturer</th>
+                      <th scope="col">Credits</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Data Structures</strong><br><span class="text-small text-muted">CS 211</span></td>
+                      <td>Dr. Owusu</td>
+                      <td>4</td>
+                      <td><span class="badge badge--success">On track</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Calculus II</strong><br><span class="text-small text-muted">MATH 152</span></td>
+                      <td>Prof. Addo</td>
+                      <td>4</td>
+                      <td><span class="badge badge--warning">Needs attention</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Intro to Entrepreneurship</strong><br><span class="text-small text-muted">BUSA 201</span></td>
+                      <td>Ms. Boateng</td>
+                      <td>3</td>
+                      <td><span class="badge badge--success">On track</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Web Development</strong><br><span class="text-small text-muted">CS 231</span></td>
+                      <td>Mr. Tetteh</td>
+                      <td>3</td>
+                      <td><span class="badge badge--info">New project</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Leadership Seminar</strong><br><span class="text-small text-muted">LDSP 202</span></td>
+                      <td>Dr. Asante</td>
+                      <td>2</td>
+                      <td><span class="badge badge--success">On track</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="card" id="grades">
+              <div class="card__header">
+                <h2 class="card__title">Course Progress</h2>
+                <span class="badge">Semester 1</span>
+              </div>
+
+              <div class="course-progress">
+                <div class="course-progress__head"><span>Data Structures</span><span>82%</span></div>
+                <div class="progress"><div class="progress__bar progress__bar--success" style="width:82%"></div></div>
+              </div>
+              <div class="course-progress">
+                <div class="course-progress__head"><span>Calculus II</span><span>61%</span></div>
+                <div class="progress"><div class="progress__bar progress__bar--accent" style="width:61%"></div></div>
+              </div>
+              <div class="course-progress">
+                <div class="course-progress__head"><span>Intro to Entrepreneurship</span><span>74%</span></div>
+                <div class="progress"><div class="progress__bar" style="width:74%"></div></div>
+              </div>
+              <div class="course-progress">
+                <div class="course-progress__head"><span>Web Development</span><span>48%</span></div>
+                <div class="progress"><div class="progress__bar" style="width:48%"></div></div>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="dash__col">
+
+            <section class="card" id="schedule">
+              <div class="card__header">
+                <h2 class="card__title">Today's Schedule</h2>
+                <span class="text-small text-muted">Fri, 13 Nov</span>
+              </div>
+              <ul>
+                <li class="list-item">
+                  <span class="schedule-time">08:30</span>
+                  <div class="list-item__body">
+                    <p class="list-item__title">Data Structures</p>
+                    <p class="list-item__meta">Lecture Hall 2 · Dr. Owusu</p>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <span class="schedule-time">11:00</span>
+                  <div class="list-item__body">
+                    <p class="list-item__title">Calculus II</p>
+                    <p class="list-item__meta">Room B14 · Prof. Addo</p>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <span class="schedule-time schedule-time--accent">14:00</span>
+                  <div class="list-item__body">
+                    <p class="list-item__title">Web Development Lab</p>
+                    <p class="list-item__meta">Computer Lab 1 · Mr. Tetteh</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="card" id="deadlines">
+              <div class="card__header">
+                <h2 class="card__title">Upcoming Deadlines</h2>
+              </div>
+              <ul>
+                <li class="list-item">
+                  <div class="list-item__body">
+                    <p class="list-item__title">Calculus Problem Set 7</p>
+                    <p class="list-item__meta">Due Sunday, 15 Nov</p>
+                  </div>
+                  <span class="badge badge--danger">2 days</span>
+                </li>
+                <li class="list-item">
+                  <div class="list-item__body">
+                    <p class="list-item__title">Web Dev Project Proposal</p>
+                    <p class="list-item__meta">Due Tuesday, 17 Nov</p>
+                  </div>
+                  <span class="badge badge--warning">4 days</span>
+                </li>
+                <li class="list-item">
+                  <div class="list-item__body">
+                    <p class="list-item__title">Entrepreneurship Pitch Deck</p>
+                    <p class="list-item__meta">Due Friday, 20 Nov</p>
+                  </div>
+                  <span class="badge">7 days</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="card">
+              <div class="card__header">
+                <h2 class="card__title">Announcements</h2>
+              </div>
+              <div class="stack">
+                <div class="alert alert--info">
+                  <strong>Registration open:</strong> Second semester course registration begins 23 November.
+                </div>
+                <div class="alert alert--warning">
+                  <strong>Library:</strong> Extended opening hours during exam week.
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
